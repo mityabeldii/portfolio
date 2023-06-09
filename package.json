@@ -9,6 +9,7 @@
     ],
     "scripts": {
         "dev": "turbo run dev",
+        "build": "turbo run build",
         "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
     },
     "keywords": [],
