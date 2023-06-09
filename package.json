@@ -1,0 +1,19 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "workspaces": [
+        "packages/*",
+        "apps/*"
+    ],
+    "scripts": {
+        "dev": "turbo run dev",
+        "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    },
+    "keywords": [],
+    "private": true,
+    "author": "",
+    "license": "ISC",
+    "dependencies": {}
+}
