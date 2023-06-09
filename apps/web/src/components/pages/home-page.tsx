@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const HomePage = () => {
     return (
         <div className="flex fle-row gap-5 items-center justify-center">
@@ -13,15 +11,6 @@ const HomePage = () => {
             </div>
             <h1 className="font-bold">Dmytro Beldii</h1>
             <div className="absolute bottom-0 mb-5 flex flex-row gap-2">
-                <Link to="/ssh-key">
-                    <button
-                        onClick={() => {
-                            navigator.clipboard.writeText('foo');
-                        }}
-                    >
-                        .ssh
-                    </button>
-                </Link>
                 <a href="https://instagram.com/mityabeldii" target="_blank">
                     <button>instagram</button>
                 </a>

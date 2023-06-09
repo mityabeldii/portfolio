@@ -6,7 +6,7 @@ const MainRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/ssh-key" element={<SshKeyPage />} />
+            <Route path="/ssh" element={<SshKeyPage />} />
             <Route path="*" element={<Navigate to="/" />} />
         </Routes>
     );
