@@ -14,6 +14,9 @@ const HomePage = () => {
                 <a href="https://instagram.com/mityabeldii" target="_blank">
                     <button>instagram</button>
                 </a>
+                <a href="https://linkedin.com/in/dmytro-beldii-8592b1188/" target="_blank">
+                    <button>linkedin</button>
+                </a>
             </div>
         </div>
     );
