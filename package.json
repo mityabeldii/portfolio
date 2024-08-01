@@ -16,5 +16,6 @@
     "private": true,
     "author": "",
     "license": "ISC",
-    "dependencies": {}
+    "dependencies": {},
+    "packageManager": "bun@1.0.8"
 }
