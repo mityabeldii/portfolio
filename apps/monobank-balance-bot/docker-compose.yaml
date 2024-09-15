@@ -1,0 +1,10 @@
+services:
+    server:
+        container_name: monobank-balance-bot
+        build: .
+        ports:
+            - '5000:5001'
+        env_file: .env
+        restart: always
+        volumes:
+            - ./.monobank-balance-bot-cache:/app/.cache

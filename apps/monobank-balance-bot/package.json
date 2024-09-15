@@ -1,0 +1,26 @@
+{
+  "name": "monobank-balance-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "tsc && bun build --minify src/index.ts --outfile=dist/bundle.js --target=node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dayjs": "^1.11.13",
+    "effector": "^23.2.2",
+    "hono": "^4.6.1",
+    "node-cron": "^3.0.3",
+    "telegraf": "^4.16.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.9",
+    "@types/node-cron": "^3.0.11"
+  }
+}
