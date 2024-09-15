@@ -5,6 +5,7 @@ import { env } from 'shared/env';
 import { CurrencyRate } from 'types/currency-rate';
 import { StatementItem, WebhookData } from 'types/statemenet';
 import { currencySymbols, mccIconMap } from './utils';
+import dayjs from 'dayjs';
 
 const { MONOBANK_API_TOKEN, MONOBANK_ACCOUNT_ID } = env;
 
@@ -32,8 +33,7 @@ const setCachedCurrencyFx = createEffect(async (data: CurrencyRate[]) => Bun.wri
 function statementTemplate(statement: StatementItem): string {
     const currencySymbol = currencySymbols[statement.currencyCode as keyof typeof currencySymbols];
     const emoji = mccIconMap[statement.mcc as keyof typeof mccIconMap];
-    const cardAndFingerEmoji = (amount: number) => (amount > 0 ? '👉💳' : '💳👉');
-    return `${emoji ? `${emoji} ` : ''}${statement.description}\n${cardAndFingerEmoji(statement.amount)} ${statement.amount / 100} ${currencySymbol}\n${statement.balance / 100} ${currencySymbol}`;
+    return `${emoji || ''}*${(statement.amount / 100).toFixed(2)}*\n${statement.description}\nBalance: ${(statement.balance / 100).toFixed(2)}${currencySymbol}\n`;
 }
 
 sample({
@@ -57,3 +57,5 @@ export const monobank = {
 
     statementTemplate,
 };
+
+// getStatementsFx({ from: dayjs().subtract(7, 'day').unix(), to: dayjs().unix() }).then((statements) => Bun.write('.cache/statements.json', JSON.stringify(statements)));
